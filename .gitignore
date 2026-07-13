@@ -1,0 +1,5 @@
+.terrafrom/
+*.tfstate
+*.tfstate.*
+*.log
+.DS_Store
