@@ -1,0 +1,23 @@
+---
+- name: Configuracion local para proyecto DevOps
+  hosts: local
+  become: true
+  tasks: 
+   - name:Instalar paquetes base
+      - curl
+      - git
+     state: present
+     update_cache_ true
+
+   - name: Crear carpeta de publicacion
+     file:
+      path: /opt/devops-shell-framework
+      state: directory
+      mode: '0755'
+
+   
+   -name: Copiar pagina generada
+    copy:
+     src: ../app/devops-app-eventos/app.js
+     dest: /opt/devops-shell-framework/app.js
+     mode: '0644'

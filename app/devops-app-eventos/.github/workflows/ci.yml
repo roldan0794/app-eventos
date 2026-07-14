@@ -20,7 +20,7 @@ jobs:
 
     - name: Construir imagen docker de app eventos
       run:
-        docker build -t app-eventos:${{ github.sha }} - f docker/Dockerfile .
+        docker build -t app-eventos:${{ github.sha }} -f docker/Dockerfile .
 
     - name: Verificacion Exitosa
       run: echo "La imagen docker para la App de gestion de eventos se compilo correctamente sin errores"
