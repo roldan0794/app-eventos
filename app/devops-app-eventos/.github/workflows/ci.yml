@@ -1,0 +1,26 @@
+name: DevOps Event App CI
+
+on:
+  push:
+    branches:
+      - main
+    path:
+      - 'app/devops-app-eventos/app.js'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout de codigo
+      uses: actions/checkout@v4
+
+    - name: Configurar Docker buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Construir imagen docker de app eventos
+      run:
+        docker build -t app-eventos:${{ github.sha }} - f docker/Dockerfile .
+
+    - name: Verificacion Exitosa
+      run: echo "La imagen docker para la App de gestion de eventos se compilo correctamente sin errores"
