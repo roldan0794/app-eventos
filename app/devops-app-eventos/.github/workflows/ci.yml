@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    path:
-      - 'app/devops-app-eventos/app.js'
 
 jobs:
   build-and-test:
@@ -19,7 +17,7 @@ jobs:
       uses: docker/setup-buildx-action@v3
 
     - name: Construir imagen docker de app eventos
-      run:
+      run: |
         docker build -t app-eventos:${{ github.sha }} -f docker/Dockerfile .
 
     - name: Verificacion Exitosa
