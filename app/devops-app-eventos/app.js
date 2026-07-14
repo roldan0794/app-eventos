@@ -37,3 +37,9 @@ app.get('/info', (req, res) => {
 app.listen(PORT, () => {
   console.log('Servidor de Eventos corriendo en el puerto ${PORT} en entorno de ${ENTORN_NAME}');
 });
+
+app.get('/metrics', (req, res) => {
+    const memoryUsage = process.memoryUsage();
+    res.set('Content-Type', 'text/plain');
+    res.send(`# HELP app_memory_usage_bytes Uso de memoria de la app\napp_memory_usage_bytes ${memoryUsage.heapUsed}\n`);
+});
