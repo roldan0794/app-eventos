@@ -21,6 +21,10 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/health', (req,res) => {
+  res.status(200).json({ status: "UP", uptime: process.uptime() });
+});
+
 app.listen(PORT, () => {
   console.log('Servidor de Eventos corriendo en el puerto ${PORT} en entorno de ${ENTORN_NAME}');
 });
