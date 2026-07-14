@@ -6,7 +6,7 @@ const ENTORN_NAME = process.env.NODE_ENV || 'Desarrollo';
 
 const eventos = [
   {id: 1, nombre: "DevOps Academy 2026", fecha: "2026-07-17", lugar: "online" },
-  {id: 2, nombre: "Confenrencia de Azure", fecha: "2026-07-14", lugar: "Accenture facilities"},
+  {id: 2, nombre: "Confenrencia de Azure 4", fecha: "2026-07-14", lugar: "Accenture facilities"},
   {id: 3, nombre: "Laboratorio de Azure 3", fecha: "2026-07-15", lugar: "online"}
 ];
 
